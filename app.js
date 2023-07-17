@@ -16,15 +16,19 @@ function setTimes() {
   clasHour.style.transform = `rotate(${hourRotation}deg)`;
   clasMin.style.transform = `rotate(${minRotation}deg)`;
   clasSec.style.transform = `rotate(${secRotation}deg)`;
-
+let all = `${hour}:${min}:${sec} AM`;
   if (sec <= 9) {
     sec = `0${sec}`;
   }
   if (min <= 9) {
-    min = `0${hour}`;
+    min = `0${min}`;
   }
-  if (hour >= 12 || hour <= 0) {
-    para.innerText = `0${hour - 12}:${min}:${sec} PM`;
+  if( hour <= 9){
+    hour = `0${hour}`;
   }
+  if (hour >= 12) {
+    all = `${hour-12}:${min}:${sec} PM`;
+  }
+  para.innerText = all;
 }
 setInterval(setTimes, 1000);
