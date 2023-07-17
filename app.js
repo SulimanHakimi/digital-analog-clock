@@ -9,7 +9,7 @@ function setTimes() {
   let min = time.getMinutes();
   let sec = time.getSeconds();
   
-  let hourRotation = 30 * hour + min / 2;
+  let hourRotation = 30*hour+min/2;
   let minRotation = 6 * min;
   let secRotation = 6 * sec;
 
